@@ -1,16 +1,17 @@
 'use strict';
 
 angular.module('7minWorkout')
-.controller('WorkoutController', ['$scope', '$interval', function ($scope, $interval){
+.controller('WorkoutController', ['$scope', '$interval', '$location', function ($scope, $interval, $location){
 
 	var ejercicios = [];
+	var nroEjercicio = 0;
 	ejercicios.push({
 
 		detalle: new Ejercicio({
 			nombre: "jumpingJacks",
 			titulo: "Jumping Jacks",
 			descripcion: "A jumping jack or star jump, also called side-straddle hop is a physical jumping exercise.",
-			imagen: "img/JumpingJacks.png",
+			imagen: "http://gifplaatjes.eu/sticks/gifplaatjes.php?thumb=sticks/stokmannetje07.gif",
 			videos: ["//www.youtube.com/embed/dmYwZH_BNd0", "//www.youtube.com/embed/BABOdJ-2Z6o", "//www.youtube.com/embed/c4DAnQ6DtF8"],
 			procedimiento: "Assume an erect position, with feet together and arms at your side.\
 			Slightly bend your knees, and propel yourself a few inches into the air.\
@@ -18,7 +19,7 @@ angular.module('7minWorkout')
 			As you are moving your legs outward, you should raise your arms up over your head; arms should be slightly bent throughout the entire in-air movement.\
 			Your feet should land shoulder width or wider as your hands meet above your head with arms slightly bent"
 		}),
-		duracion: 30
+		duracion: 5
 	});
 
 	ejercicios.push({
@@ -27,11 +28,11 @@ angular.module('7minWorkout')
 			nombre: "Sentadillas",
 			titulo: "Sentadillas",
 			descripcion: "Bajar de espalda en manera recta flexionando levemente las rodillas..",
-			imagen: "http://estaticos.marie-claire.es/media/cache/320x240_thumb/uploads/images/article/56153dfb65016da436ecbf72/100sentadillas-p.jpg",
+			imagen: "https://arosarriba.files.wordpress.com/2016/05/squat.gif",
 			videos: ["//https://www.youtube.com/watch?v=BjixzWEw4EY", "//www.youtube.com/embed/BABOdJ-2Z6o", "//www.youtube.com/embed/c4DAnQ6DtF8"],
 			procedimiento: "Bajar de espalda en manera recta flexionando levemente las rodillas.."
 		}),
-		duracion: 45
+		duracion: 5
 	});
 
 
@@ -46,17 +47,27 @@ angular.module('7minWorkout')
 		this.procedimiento = args.procedimiento;
 	}
 
-	var comenzarEjercicios = function (planEjercicios) {
-		$scope.ejercicioActual = planEjercicios;
-		$scope.duracionEjercicioActual = 0;
-		$interval(function(){
-			++$scope.duracionEjercicioActual;
-		}, 1000, $scope.ejercicioActual.duracion)
-		.then(function () {
+	$scope.$watch('duracionEjercicioActual', function(arg1){
+		if(arg1 == $scope.ejercicioActual.duracion){
 			comenzarEjercicios(ejercicios.shift());
-		});
+			nroEjercicio++;
+		}
+	})
+
+
+	var comenzarEjercicios = function (planEjercicios) {
+		if(ejercicios.length >= nroEjercicio){
+			$scope.ejercicioActual = planEjercicios;
+			$scope.duracionEjercicioActual = 0;
+			$interval(function(){
+				++$scope.duracionEjercicioActual;
+			}, 1000, $scope.ejercicioActual.duracion);
+		}else{
+			$location.path('/finish');
+		}		
 
 	}
 	comenzarEjercicios(ejercicios.shift());
+
 
 }]);
