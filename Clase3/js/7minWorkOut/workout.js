@@ -11,7 +11,7 @@ angular.module('7minWorkout')
 			nombre: "jumpingJacks",
 			titulo: "Jumping Jacks",
 			descripcion: "A jumping jack or star jump, also called side-straddle hop is a physical jumping exercise.",
-			imagen: "http://gifplaatjes.eu/sticks/gifplaatjes.php?thumb=sticks/stokmannetje07.gif",
+			imagen: "https://4.bp.blogspot.com/-jj63x3HTRDg/V1RUCncS1fI/AAAAAAAATmw/yEj1LywZi5Att_WakvHd_0bEtV4MainkQCPcB/s1600/Jumping%2BJacks.gif",
 			videos: ["//www.youtube.com/embed/dmYwZH_BNd0", "//www.youtube.com/embed/BABOdJ-2Z6o", "//www.youtube.com/embed/c4DAnQ6DtF8"],
 			procedimiento: "Assume an erect position, with feet together and arms at your side.\
 			Slightly bend your knees, and propel yourself a few inches into the air.\
@@ -28,7 +28,7 @@ angular.module('7minWorkout')
 			nombre: "Sentadillas",
 			titulo: "Sentadillas",
 			descripcion: "Bajar de espalda en manera recta flexionando levemente las rodillas..",
-			imagen: "https://arosarriba.files.wordpress.com/2016/05/squat.gif",
+			imagen: "https://media.giphy.com/media/xPLLt4q6IV84M/giphy.gif",
 			videos: ["//https://www.youtube.com/watch?v=BjixzWEw4EY", "//www.youtube.com/embed/BABOdJ-2Z6o", "//www.youtube.com/embed/c4DAnQ6DtF8"],
 			procedimiento: "Bajar de espalda en manera recta flexionando levemente las rodillas.."
 		}),
@@ -56,6 +56,7 @@ angular.module('7minWorkout')
 
 
 	var comenzarEjercicios = function (planEjercicios) {
+
 		if(ejercicios.length >= nroEjercicio){
 			$scope.ejercicioActual = planEjercicios;
 			$scope.duracionEjercicioActual = 0;
@@ -68,6 +69,4 @@ angular.module('7minWorkout')
 
 	}
 	comenzarEjercicios(ejercicios.shift());
-
-
 }]);

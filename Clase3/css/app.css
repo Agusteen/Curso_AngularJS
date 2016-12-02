@@ -20,6 +20,7 @@ body {
     padding-right: 15px;
 }
 
+
 /* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
@@ -73,12 +74,12 @@ input[type="checkbox"].input-validation-error {
 }
 .workout-display-div{
     text-align:center;
-    padding:40px;
+    
 }
 .workout-display-div .img-responsive{
     margin: 25px auto;
-    width:540px;
-    height:360px;
+    width:auto;
+    height:230px;
     cursor:pointer;
 }
 .workout-display-div .time-progress{
@@ -96,7 +97,7 @@ input[type="checkbox"].input-validation-error {
 }
 #start a {
     text-decoration: none;
-    font-size: 67px;
+    font-size: 40px;
     color:#4eaded;
 }
 #start a:hover{
