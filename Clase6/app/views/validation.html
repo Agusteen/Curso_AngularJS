@@ -1,0 +1,17 @@
+
+  <form name="myForm">
+  <div class="form-group">
+    
+    
+    <label class="control-label">Mail</label>
+      <input type="email" class="form-control" placeholder="Mail" ng-model='mail' required> 
+      <p ng-if="!mail">Complete correctamente este campo</p> 
+
+    <label class="control-label">Numero del 0 al 99</label>    
+    <input type="number" name="input" ng-model="example.value" min="0" max="99" required>
+
+    <span class="error" ng-if="myForm.input.$error.number">
+      Not valid number!</span>
+ 
+  	</div>  
+</form>

@@ -38,6 +38,16 @@ angular
          controller: 'FormController',
         controllerAs: 'form'
       })
+      .when('/clima', {
+        templateUrl: 'views/clima.html',
+        controller: 'ClimaCtrl',
+        controllerAs: 'clima'
+      })
+      .when('/Validation', {
+        templateUrl: 'views/validation.html',
+        controller: 'ValidationCtrl',
+        controllerAs: 'Validation'
+      })
       .otherwise({
         redirectTo: '/'
       });
