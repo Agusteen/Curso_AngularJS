@@ -1,8 +1,10 @@
 Curso Angular JS 
 ================
 
-Harriague Noviembre 2016
-------------------------
+Harriague Noviembre/Diciembre 2016
+-----------------------------------
+
+Dirigido por * **Mauricio Ferreyra** - [mauriff](https://github.com/mauriff)
 
 Organizado por clases
 
@@ -11,4 +13,4 @@ Organizado por clases
 	...
 + ClaseN	
 
--Agustin MC
+* **Agustín Muñoz Campos** - [Agusteen](https://github.com/Agusteen)
