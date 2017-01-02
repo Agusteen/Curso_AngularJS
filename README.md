@@ -13,4 +13,4 @@ Organizado por clases
 	...
 + ClaseN	
 
-* **Agustín Muñoz Campos** - [Agusteen](https://github.com/Agusteen)
+**Agustín Muñoz Campos** - [Agusteen](https://github.com/Agusteen)
